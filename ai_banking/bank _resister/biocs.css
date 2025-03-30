@@ -1,0 +1,126 @@
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #5a67d8, #4c51bf);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-wrapper {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .info-text {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .biometric-section {
+    margin-bottom: 40px;
+  }
+  
+  .biometric-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #4285F4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .fingerprint-icon img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .fingerprint-text {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start {
+    background-color: #5a67d8;
+    color: white;
+  }
+  
+  .start:hover {
+    background-color: #4c51bf;
+  }
+  
+  .cancel {
+    background-color: #f56565;
+    color: white;
+  }
+  
+  .cancel:hover {
+    background-color: #e53e3e;
+  }
+  
+  .google-auth {
+    margin-top: 20px;
+  }
+  
+  .google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .google-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .google-btn:hover {
+    background-color: #357AE8;
+  }
+  

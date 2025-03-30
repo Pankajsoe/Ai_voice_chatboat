@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera Access</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    video {
+      width: 100%;
+      max-width: 640px;
+      border: 2px solid #333;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    button:disabled {
+      background-color: #7f8c8d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <video id="video" autoplay></video>
+    <br>
+    <button id="start-button">Start Camera</button>
+    <button id="stop-button" disabled>Stop Camera</button>
+  </div>
+
+  <script>
+    const videoElement = document.getElementById('video');
+    const startButton = document.getElementById('start-button');
+    const stopButton = document.getElementById('stop-button');
+
+    // Function to start the camera
+    async function startCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        videoElement.srcObject = stream;
+        startButton.disabled = true; // Disable the start button
+        stopButton.disabled = false; // Enable the stop button
+      } catch (error) {
+        console.error('Error accessing camera: ', error);
+      }
+    }
+
+    // Function to stop the camera
+    function stopCamera() {
+      const stream = videoElement.srcObject;
+      if (stream) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
+        videoElement.srcObject = null;
+        startButton.disabled = false;
+        stopButton.disabled = true;
+      }
+    }
+    /*function Submit() {
+      const stream = videoElement.srcObject;
+      if (stream) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
+        videoElement.srcObject = null;
+        startButton.disabled = false;
+            stopButton.disabled = true;*/
+      
+    
+
+    // Event listeners
+    startButton.addEventListener('click', startCamera);
+    stopButton.addEventListener('click', stopCamera);
+    //SubmitButton.addEventListener('click', Submit);
+  </script>
+
+</body>
+</html>

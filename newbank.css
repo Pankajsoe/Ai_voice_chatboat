@@ -1,0 +1,115 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Banking Background */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.banking-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2; /* Add transparency to blend with digital effects */
+    filter: blur(10px); /* Add slight blur for a realistic background */
+}
+
+/* Chat Window */
+.chat-window {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.messages {
+    max-height: 350px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(0, 255, 255, 0.1);
+    animation: textAppear 0.5s ease-in-out;
+}
+
+.message.ai {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.message.user {
+    background-color: rgba(255, 0, 255, 0.1);
+}
+
+/* Microphone Button */
+.mic-button {
+    background-color: #00bcd4;
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.mic-button:active {
+    transform: scale(0.9);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+}
+
+.action-btn {
+    background: rgba(0, 255, 255, 0.3);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
